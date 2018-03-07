@@ -28,8 +28,9 @@ public class MainActivity extends AppCompatActivity {
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /**Toast.makeText(MainActivity.this,"ALERT 2",Toast.LENGTH_LONG).show();*/
+                //**Toast.makeText(MainActivity.this,"ALERT 2",Toast.LENGTH_LONG).show();*/
                 startActivity(new Intent(MainActivity.this, alertcontentActivity.class));
+                //testing
             }
         });
 
@@ -37,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         b3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /**Toast.makeText(MainActivity.this,"ALERT 3",Toast.LENGTH_LONG).show();*/
+                //**Toast.makeText(MainActivity.this,"ALERT 3",Toast.LENGTH_LONG).show();*/
                 startActivity(new Intent(MainActivity.this, alertcontentActivity.class));
             }
         });
@@ -46,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         b4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /**Toast.makeText(MainActivity.this,"ALERT 4",Toast.LENGTH_LONG).show();*/
+                //**Toast.makeText(MainActivity.this,"ALERT 4",Toast.LENGTH_LONG).show();*/
                 startActivity(new Intent(MainActivity.this, alertcontentActivity.class));
             }
         });
