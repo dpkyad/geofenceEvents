@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 /**
@@ -12,16 +13,32 @@ import android.widget.Toast;
  */
 
 public class alertcontentActivity  extends AppCompatActivity{
+    private TextView thedate;
+    private Button btngocalendar;
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.alertcontent_main);
+        thedate = (TextView) findViewById(R.id.date);
+        btngocalendar = (Button) findViewById(R.id.bDateButton);
+
+        Intent incoming = getIntent();
+        String date = incoming.getStringExtra("date");
+        thedate.setText(date);
 
         Button b1=(Button)findViewById(R.id.bName);
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(alertcontentActivity.this, eventName.class));
+            }
+        });
+        btngocalendar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(alertcontentActivity.this,CalendarActivity.class);
+                startActivity(intent);
             }
         });
 

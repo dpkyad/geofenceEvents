@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">events</string>
+    <string name="title_activity_calendar_layout">calendar_layout</string>
 </resources>

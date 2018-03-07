@@ -14,13 +14,26 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Event Name" />
-
         <Button
-            android:id="@+id/bDate"
+            android:id="@+id/bDateButton"
             style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_toRightOf="@+id/bDate"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:text="Date"/>
+        <TextView
+            android:id="@+id/date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="3/4/18" />
+            android:text=""
+            android:textAlignment="center"
+            android:textSize="25dp"
+            android:visibility="visible" />
+
+
+
 
         <Button
             android:id="@+id/bTime"
@@ -44,4 +57,5 @@
             android:text="Event Type" />
 
     </LinearLayout>
+
 </android.support.constraint.ConstraintLayout>
