@@ -15,6 +15,7 @@ import android.widget.Toast;
 public class alertcontentActivity  extends AppCompatActivity{
     private TextView thedate;
     private Button btngocalendar;
+    private Button btnTime;
     @Override
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,12 +23,13 @@ public class alertcontentActivity  extends AppCompatActivity{
         setContentView(R.layout.alertcontent_main);
         thedate = (TextView) findViewById(R.id.date);
         btngocalendar = (Button) findViewById(R.id.bDateButton);
+        Button b1=(Button)findViewById(R.id.bName);
+        btnTime = (Button) findViewById(R.id.bTime);
 
         Intent incoming = getIntent();
         String date = incoming.getStringExtra("date");
         thedate.setText(date);
 
-        Button b1=(Button)findViewById(R.id.bName);
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -41,6 +43,13 @@ public class alertcontentActivity  extends AppCompatActivity{
                 startActivity(intent);
             }
         });
+        btnTime.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(alertcontentActivity.this, TimeActivity.class));
+            }
+        });
+
 
     }
 
