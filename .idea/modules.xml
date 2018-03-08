@@ -3,9 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://C:\Users\Bryan\AndroidStudioProjects\geofenceEvents\app\app.iml" filepath="C:\Users\Bryan\AndroidStudioProjects\geofenceEvents\app\app.iml" />
-      <module fileurl="file://C:\Users\Bryan\AndroidStudioProjects\geofenceEvents\events.iml" filepath="C:\Users\Bryan\AndroidStudioProjects\geofenceEvents\events.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/geofenceEvents.iml" filepath="$PROJECT_DIR$/.idea/geofenceEvents.iml" />
+      <module fileurl="file://$PROJECT_DIR$/events.iml" filepath="$PROJECT_DIR$/events.iml" />
     </modules>
   </component>
 </project>
