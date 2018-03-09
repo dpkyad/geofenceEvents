@@ -22,9 +22,9 @@ public class eventName extends AppCompatActivity {
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EditText etLocation = (EditText) findViewById(R.id.editText);
+                EditText edName = (EditText) findViewById(R.id.editText);
                 Intent intent = new Intent(eventName.this, alertcontentActivity.class );
-                intent.putExtra("location", etLocation.getText().toString());
+                intent.putExtra("name", edName.getText().toString());
                 setResult(RESULT_OK, intent);
                 finish();
 

@@ -68,7 +68,7 @@ public class alertcontentActivity  extends AppCompatActivity{
         }
         if (requestCode == 2) {
             if (resultCode==RESULT_OK) {
-                String name = data.getStringExtra("location");
+                String name = data.getStringExtra("name");
                 thename.setText(name);
 
 
