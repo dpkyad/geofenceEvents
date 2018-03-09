@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 public class alertcontentActivity  extends AppCompatActivity{
     private TextView thedate;
+    private TextView thename;
     private Button btngocalendar;
     @Override
 
@@ -21,27 +22,58 @@ public class alertcontentActivity  extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.alertcontent_main);
         thedate = (TextView) findViewById(R.id.date);
+        thename = (TextView) findViewById(R.id.name);
         btngocalendar = (Button) findViewById(R.id.bDateButton);
+        String dateCopy = thedate.getText().toString();
 
-        Intent incoming = getIntent();
-        String date = incoming.getStringExtra("date");
-        thedate.setText(date);
+        /*Intent incoming = getIntent();
+        if(null!=incoming.getExtras()) {
+            String date = incoming.getStringExtra("date");
+            if(date!=null) {
+                thedate.setText(date);
+            }
+        }
+        else
+        {
+            thedate.setText(dateCopy);
+        }
+*/
+
 
         Button b1=(Button)findViewById(R.id.bName);
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(alertcontentActivity.this, eventName.class));
+                startActivityForResult(new Intent(alertcontentActivity.this, eventName.class), 2);
             }
         });
         btngocalendar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(alertcontentActivity.this,CalendarActivity.class);
-                startActivity(intent);
+                startActivityForResult(intent, 1);
             }
         });
 
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == 1) {
+            if(resultCode==RESULT_OK) {
+                String date = data.getStringExtra("date");
+                thedate.setText(date);
+            }
+        }
+        if (requestCode == 2) {
+            if (resultCode==RESULT_OK) {
+                String name = data.getStringExtra("location");
+                thename.setText(name);
+
+
+            }
+        }
     }
 
 }
