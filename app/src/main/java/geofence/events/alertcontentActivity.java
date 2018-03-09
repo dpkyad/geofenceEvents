@@ -9,7 +9,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 /**
- * Created by DY on 3/6/2018.
+ * Created//// by DY on 3/6/2018.
  */
 
 public class alertcontentActivity  extends AppCompatActivity{
