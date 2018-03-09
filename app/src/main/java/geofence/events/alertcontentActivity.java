@@ -14,7 +14,9 @@ import android.widget.Toast;
 
 public class alertcontentActivity  extends AppCompatActivity{
     private TextView thedate;
+    private TextView thename;
     private Button btngocalendar;
+    private Button btnback;
     private Button btnTime;
     @Override
 
@@ -22,25 +24,45 @@ public class alertcontentActivity  extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.alertcontent_main);
         thedate = (TextView) findViewById(R.id.date);
+        thename = (TextView) findViewById(R.id.name);
         btngocalendar = (Button) findViewById(R.id.bDateButton);
         Button b1=(Button)findViewById(R.id.bName);
         btnTime = (Button) findViewById(R.id.bTime);
+        btnback = (Button) findViewById(R.id.bback2);
+        String dateCopy = thedate.getText().toString();
 
-        Intent incoming = getIntent();
-        String date = incoming.getStringExtra("date");
-        thedate.setText(date);
+        /*Intent incoming = getIntent();
+        if(null!=incoming.getExtras()) {
+            String date = incoming.getStringExtra("date");
+            if(date!=null) {
+                thedate.setText(date);
+            }
+        }
+        else
+        {
+            thedate.setText(dateCopy);
+        }
+*/
+
 
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(alertcontentActivity.this, eventName.class));
+                startActivityForResult(new Intent(alertcontentActivity.this, eventName.class), 2);
             }
         });
         btngocalendar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(alertcontentActivity.this,CalendarActivity.class);
-                startActivity(intent);
+                startActivityForResult(intent, 1);
+            }
+        });
+        btnback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(alertcontentActivity.this,MainActivity.class);
+                startActivityForResult(intent, 3);
             }
         });
         btnTime.setOnClickListener(new View.OnClickListener() {
@@ -51,6 +73,27 @@ public class alertcontentActivity  extends AppCompatActivity{
         });
 
 
+
+
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == 1) {
+            if(resultCode==RESULT_OK) {
+                String date = data.getStringExtra("date");
+                thedate.setText(date);
+            }
+        }
+        if (requestCode == 2) {
+            if (resultCode==RESULT_OK) {
+                String name = data.getStringExtra("name");
+                thename.setText(name);
+
+
+            }
+        }
     }
 
 }
