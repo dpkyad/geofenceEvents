@@ -17,6 +17,7 @@ public class alertcontentActivity  extends AppCompatActivity{
     private TextView thename;
     private Button btngocalendar;
     private Button btnback;
+    private Button btnTime;
     @Override
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +26,8 @@ public class alertcontentActivity  extends AppCompatActivity{
         thedate = (TextView) findViewById(R.id.date);
         thename = (TextView) findViewById(R.id.name);
         btngocalendar = (Button) findViewById(R.id.bDateButton);
+        Button b1=(Button)findViewById(R.id.bName);
+        btnTime = (Button) findViewById(R.id.bTime);
         btnback = (Button) findViewById(R.id.bback2);
         String dateCopy = thedate.getText().toString();
 
@@ -42,7 +45,6 @@ public class alertcontentActivity  extends AppCompatActivity{
 */
 
 
-        Button b1=(Button)findViewById(R.id.bName);
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -63,6 +65,13 @@ public class alertcontentActivity  extends AppCompatActivity{
                 startActivityForResult(intent, 3);
             }
         });
+        btnTime.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(alertcontentActivity.this, TimeActivity.class));
+            }
+        });
+
 
 
 
