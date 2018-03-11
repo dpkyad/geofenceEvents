@@ -10,11 +10,22 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     Button b1,b2,b3,b4;
+    DatabaseHelper myDb;
+
+
+
+
+
+
+
 
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        myDb = new DatabaseHelper(this);
+
 
         b1=(Button)findViewById(R.id.button);
         b1.setOnClickListener(new View.OnClickListener() {
